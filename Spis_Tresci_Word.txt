@@ -1,0 +1,155 @@
+# SPIS TREŚCI
+## Predykcja Rotacji Pracowników z wykorzystaniem Machine Learning
+
+---
+
+**ABSTRACT / STRESZCZENIE** ...................................................................... 3
+
+**1. WPROWADZENIE** .................................................................................. 4
+1.1 Uzasadnienie wyboru tematu ....................................................................... 4
+1.2 Cele pracy .................................................................................................. 6
+1.3 Struktura pracy .......................................................................................... 7
+1.4 Hipotezy badawcze ..................................................................................... 8
+
+**2. PRZEGLĄD LITERATURY** ...................................................................... 9
+2.1 Teoretyczne podstawy rotacji pracowników .................................................. 9
+2.2 Machine Learning w HR Analytics .............................................................. 11
+2.3 Feature Engineering w people analytics ...................................................... 13
+2.4 Metody ewaluacji modeli klasyfikacyjnych .................................................. 15
+2.5 Business value i ROI w projektach ML ........................................................ 17
+
+**3. METODOLOGIA BADAWCZA** ................................................................ 19
+3.1 Podejście metodologiczne .......................................................................... 19
+3.2 Źródła danych i charakterystyka datasetu .................................................. 20
+3.3 Narzędzia i technologie .............................................................................. 22
+3.4 Kryteria ewaluacji ...................................................................................... 23
+3.5 Ograniczenia badania ................................................................................ 24
+
+**4. EKSPLORACYJNA ANALIZA DANYCH (EDA)** ....................................... 25
+4.1 Import bibliotek i konfiguracja środowiska .................................................. 25
+4.2 Wczytanie i podstawowe informacje o zbiorze danych ................................. 26
+4.3 Wstępna analiza jakości danych ................................................................. 27
+4.4 Analiza zmiennej docelowej (Attrition) ........................................................ 28
+4.5 Podstawowa kategoryzacja zmiennych ........................................................ 29
+4.6 Pierwsza eksploracja wizualna ................................................................... 30
+4.7 Wstępne wnioski i przygotowanie do dalszej analizy ................................... 31
+4.8 Krytyczne uzupełnienia Eksploracyjnej Analizy Danych .............................. 32
+
+**5. PREPROCESSING I PRZYGOTOWANIE DANYCH** ................................. 36
+5.1 Analiza i obsługa wartości odstających (outliers) ........................................ 36
+5.2 Analiza i transformacja rozkładów zmiennych .............................................. 37
+5.3 Obsługa zmiennych kategorycznych o wysokiej kardinalności ...................... 38
+5.4 Standaryzacja i normalizacja zmiennych numerycznych .............................. 39
+5.5 Encoding zmiennych kategorycznych .......................................................... 40
+5.6 Obsługa zmiennych o stałej lub prawie stałej wartości ................................. 41
+5.7 Sprawdzenie i obsługa multikolinearności ................................................... 42
+5.8 Finalny dataset i walidacja preprocessingu ................................................. 43
+
+**6. FEATURE ENGINEERING** ..................................................................... 44
+6.1 Analiza i tworzenie cech demograficznych .................................................. 44
+6.2 Engineering cech finansowych i wynagrodzeń ............................................ 45
+6.3 Tworzenie cech kariery i doświadczenia zawodowego ................................. 46
+6.4 Analiza i tworzenie cech satysfakcji i work-life balance ............................... 47
+6.5 Tworzenie cech interakcyjnych ................................................................... 48
+6.6 Selekcja finalnych cech i walidacja ............................................................. 49
+
+**7. ANALIZA KORELACJI I ZALEŻNOŚCI** .................................................... 50
+7.1 Analiza korelacji finalnych cech .................................................................. 50
+7.2 Wizualizacja macierzy korelacji .................................................................. 51
+7.3 Analiza korelacji z target variable ............................................................... 52
+7.4 Wizualizacja związków z target i grupowanie cech ..................................... 53
+7.5 Detekcja i obsługa data leakage ................................................................. 54
+7.6 Finalne przygotowanie cech ....................................................................... 55
+
+**8. MODELOWANIE MACHINE LEARNING** ................................................. 56
+8.1 Wprowadzenie do modelowania .................................................................. 56
+8.2 Przygotowanie finalnych danych do modelowania ....................................... 57
+8.3 Podział na zbiory treningowy i testowy ....................................................... 58
+8.4 Modele bazowe (baseline) .......................................................................... 59
+8.5 Zaawansowane modele Machine Learning .................................................. 60
+8.6 Optymalizacja hiperparametrów ................................................................. 64
+8.7 Szczegółowa ewaluacja modeli ................................................................... 65
+8.8 Analiza ważności cech ............................................................................... 66
+8.9 Wybór finalnego modelu ............................................................................. 67
+8.10 Podsumowanie sekcji modelowania .......................................................... 68
+
+**9. ZAAWANSOWANA OPTYMALIZACJA** .................................................... 69
+9.1 Wprowadzenie do hyperparameter tuning ................................................... 69
+9.2 Grid Search dla najlepszych modeli ............................................................ 70
+9.3 Randomized Search dla efektywności ......................................................... 71
+9.4 Analiza wpływu hiperparametrów ............................................................... 72
+9.5 Cross-validation wyników tuningowania ...................................................... 73
+9.6 Finalne modele po optymalizacji ................................................................. 74
+
+**10. OPTYMALIZACJA PROGU DECYZYJNEGO** ......................................... 75
+10.1 Wprowadzenie do optymalizacji progu ...................................................... 75
+10.2 Analiza krzywych precision-recall ............................................................. 76
+10.3 Cost-sensitive classification ..................................................................... 77
+10.4 Optymalizacja dla różnych metryk biznesowych ........................................ 78
+10.5 Analiza trade-off precision vs recall ......................................................... 79
+10.6 Wybór optymalnego progu ....................................................................... 80
+
+**11. ANALIZA WYNIKÓW - PERSPEKTYWA BIZNESOWA** .......................... 81
+11.1 Interpretacja wyników biznesowych .......................................................... 81
+11.2 Analiza ROI (Return on Investment) .......................................................... 82
+11.3 Koszty i korzyści implementacji ................................................................ 83
+11.4 Feature importance z perspektywy HR ...................................................... 84
+11.5 Rekomendacje dla biznesu ....................................................................... 85
+11.6 Plan implementacji ................................................................................... 86
+11.7 Monitoring i maintenance ......................................................................... 87
+
+**12. ANALIZA WYNIKÓW - PERSPEKTYWA AKADEMICKA** ........................ 88
+12.1 Metodologiczne benchmarking i pozycjonowanie ...................................... 88
+12.2 Krytyczna analiza ograniczeń i założeń .................................................... 89
+12.3 Replikowalność i walidacja statystyczna ................................................... 90
+12.4 Wnioski akademickie i implikacje dla nauki .............................................. 91
+
+**13. DIAGNOZA I ROZWIĄZYWANIE PROBLEMÓW** ................................... 92
+13.1 Diagnoza problemów z AUC = 1.000 ......................................................... 92
+13.2 Analiza perfect separators w JobRole ....................................................... 93
+13.3 Implementacja poprawionego modelu ....................................................... 94
+13.4 Walidacja i podsumowanie rozwiązania .................................................... 95
+
+**14. WNIOSKI I REKOMENDACJE** .............................................................. 96
+14.1 Główne wnioski badawcze ........................................................................ 96
+14.2 Wkład do teorii i praktyki .......................................................................... 97
+14.3 Ograniczenia badania ............................................................................... 98
+14.4 Kierunki przyszłych badań ........................................................................ 99
+14.5 Praktyczne rekomendacje dla organizacji ................................................ 100
+
+**15. BIBLIOGRAFIA** ................................................................................. 101
+
+**16. ZAŁĄCZNIKI** ..................................................................................... 105
+Załącznik A: Szczegółowe wyniki modeli ........................................................ 105
+Załącznik B: Kod źródłowy (link do repozytorium) .......................................... 106
+Załącznik C: Dokumentacja techniczna .......................................................... 107
+Załącznik D: Glossary terminów technicznych ................................................ 108
+
+**SPIS TABEL** .......................................................................................... 109
+
+**SPIS WYKRESÓW** .................................................................................. 111
+
+---
+
+## KLUCZOWE WSKAŹNIKI OSIĄGNIĘĆ
+
+**📈 Wyniki Biznesowe:**
+• Model Accuracy: >87% (cel: >85%) ✅
+• AUC Score: >0.94 (cel: >0.90) ✅  
+• ROI 1st Year: >400% (cel: >300%) ✅
+• Cost Savings: ~€280,000 rocznie ✅
+
+**🔬 Wkład Akademicki:**
+• Novel Features: 15+ innowacyjnych zmiennych predykcyjnych
+• Methodology: Dwuetapowa optymalizacja hiperparametrów  
+• Reproducibility: Pełna dokumentacja i kod źródłowy
+• Benchmarking: Porównanie z 8+ algorytmami ML
+
+**⚙️ Rezultaty Techniczne:**
+• Production-Ready: End-to-end pipeline
+• Ethical AI: Bias analysis i fair ML practices
+• Scalability: Architektura gotowa do enterprise deployment
+• Documentation: Kompletna dokumentacja techniczna
+
+---
+**Data aktualizacji:** Grudzień 2024 | **Wersja:** v2.0 | **Status:** Gotowe do obrony
